@@ -334,6 +334,7 @@ void MyKeyboard(unsigned char KeyPressed, int x, int y) {
 
 
 void Ball() {
+    //sndPlaySound(TEXT("C:\\SAMP\\SAMPLE1.wav"), SND_ASYNC | SND_NOSTOP);
     glLoadIdentity();
     cyl = gluNewQuadric();
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -419,13 +420,15 @@ void Ball() {
     glRotatef(-an*0.8, 0, 0, 1);
     glRotatef(an*0.1, 1, 0, 0);
     glRotatef(-an*1.5, 0, 1, 0); 
-    DrawBaseballBat(an, 0, 1, 0); 
+    glRotatef(an, 0, 0, -an);
+    DrawBaseballBat(0, 0, 0, 0); 
     glPopMatrix();
 
     glutSwapBuffers();
 }
 
 void Jump() {
+    //sndPlaySound(TEXT("C:\\SAMP\\SAMPLE1.wav"), SND_ASYNC | SND_NOSTOP);
     glLoadIdentity();
     float ch = sin(time);
 
@@ -456,6 +459,7 @@ void Jump() {
 }
 
 void Run() {
+    //sndPlaySound(TEXT("C:\\SAMP\\SAMPLE1.wav"), SND_ASYNC | SND_NOSTOP);
     glLoadIdentity();
     float titi = time * time / 8;
     float jumpH = 0;
